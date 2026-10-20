@@ -38,7 +38,7 @@ class UserInterface:
 			content = message["content"]
 
 			if self.image_marker in content:
-				content = content.split(self.image_marker)[0] + "\n\n📷 *Image jointe*"
+				content = content.split(self.image_marker)[0] + "\n\n *Image jointe*"
 
 			with st.chat_message(message["role"]):
 				st.markdown(content)
@@ -70,10 +70,10 @@ class UserInterface:
 
 	def run(self):
 		interaction = st.chat_input(
-			"Que veux tu moussaillon ?",
+			"Bonjour Monsieur, J.A.R.V.I.S à votre écoute?",
 			accept_file=True,
-			file_type=["png", "jpg", "jpeg", "webp"],
 			accept_audio=True,
+			file_type=["png", "jpg", "jpeg",],
 		)
 
 		if interaction:
@@ -121,7 +121,7 @@ class ImageAnalyzer:
 					"content": [
 						{
 							"type": "text",
-							"text": "Décris cette image en détail, en français. Si elle contient du texte, retranscris-le.",
+							"text": "tu es J.A.R.V.I.S, tu sais tout et tu sais chercher les infos",
 						},
 						{
 							"type": "image_url",
